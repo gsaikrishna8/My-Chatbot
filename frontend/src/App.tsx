@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import ChatMessage from "./components/ChatMessage/ChatMessage";
 // import TypingIndicator from "./components/TypingIndicator/TypingIndicator";
 
-const WS_URL = `ws://${window.location.host}/ws/chat`;
+// const WS_URL = `ws://${window.location.host}/ws/chat`;
 // const WS_URL = "ws://127.0.0.1:8000/ws/chat";
 
 export type ChatMessageType = {
@@ -34,8 +34,8 @@ function App() {
     console.log("sessionId:", sessionId);
     // if (sessionId === null) return;
 
-    console.log("Connecting to WebSocket:", WS_URL);
-    const ws = new WebSocket(WS_URL);
+    // console.log("Connecting to WebSocket:", WS_URL);
+    const ws = new WebSocket(`${import.meta.env.VITE_API_URL}/chat`);
 
     ws.onopen = () => {
       console.log("WebSocket connected");
