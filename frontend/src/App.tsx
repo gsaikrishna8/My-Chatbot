@@ -118,15 +118,15 @@ function App() {
 
   useEffect(() => {
     const savedSessionId = localStorage.getItem("chat_session_id");
-    const savedMessages = localStorage.getItem("chat_message");
+    // const savedMessages = localStorage.getItem("chat_message");
 
     if (savedSessionId) {
       setSessionId(savedSessionId);
     }
     setSessionReady(true);
-    if (savedMessages) {
-      setMessages(JSON.parse(savedMessages));
-    }
+    // if (savedMessages) {
+    //   setMessages(JSON.parse(savedMessages));
+    // }
   }, []);
 
   useEffect(() => {
@@ -134,9 +134,9 @@ function App() {
       localStorage.setItem("chat_session_id", sessionId);
     }
   }, [sessionId]);
-  useEffect(() => {
-    localStorage.setItem("chat_message", JSON.stringify(messages));
-  }, [messages]);
+  // useEffect(() => {
+  //   localStorage.setItem("chat_message", JSON.stringify(messages));
+  // }, [messages]);
   const sendMessage = () => {
     if (!input.trim() || !socketRef.current || streaming) return;
 
