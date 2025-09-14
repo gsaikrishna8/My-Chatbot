@@ -1,0 +1,12 @@
+# Python backend env and virtual envs
+/backend/.env
+/backend/.venv/
+/backend/env/
+/backend/venv/
+/backend/ENV/
+/backend/env.bak/
+/backend/venv.bak/
+
+# Frontend env and node modules
+/frontend/.env
+/frontend/node_modules/
